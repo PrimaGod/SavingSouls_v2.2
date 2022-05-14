@@ -15,11 +15,12 @@ namespace SavingSouls_v2._2
         public Enter()
         {
             InitializeComponent();
+            
         }
 
         private void Enter_Load(object sender, EventArgs e)
         {
-
+            this.Location = new Point(300, 250);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +41,13 @@ namespace SavingSouls_v2._2
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Otshot newOtshot = new Otshot();
+            newOtshot.Show();
+            this.Visible = false;
         }
     }
 }

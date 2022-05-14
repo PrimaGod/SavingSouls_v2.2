@@ -72,6 +72,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Отчёт выездов";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Enter
             // 
@@ -83,7 +84,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Name = "Enter";
-            this.Text = "Form1";
+            this.Text = "Главное меню";
             this.Load += new System.EventHandler(this.Enter_Load);
             this.ResumeLayout(false);
 

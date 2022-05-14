@@ -17,6 +17,7 @@ namespace SavingSouls_v2._2
         public AddProblem()
         {
             InitializeComponent();
+            this.Location = new Point(300, 250);
         }
 
         

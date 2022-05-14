@@ -18,11 +18,25 @@ namespace SavingSouls_v2._2
         {
             InitializeComponent();
         }
-
-        void o()
+        void Loading(string sql) //Способ загрузки таблиц
         {
             string connectionString = (conStr);
-            string sql = "SELECT * FROM Происшествия";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dataGridView1.DataSource = ds.Tables[0];
+                connection.Close();
+            }
+        }
+
+        void LoadBD()
+        {
+            string connectionString = (conStr);
+            string sql = "SELECT * FROM [Оперативная группа]";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -38,7 +52,25 @@ namespace SavingSouls_v2._2
         private void Group_Load(object sender, EventArgs e)
         {
             this.Location = new Point(300, 250);
-            o();
+            LoadBD();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Enter newEnter = new Enter();
+            newEnter.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            InfGroup newInfGroup = new InfGroup();
+            newInfGroup.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Loading("SELECT * FROM [Оперативная группа] ORDER BY [Колличество человек в группе]");
         }
     }
 }

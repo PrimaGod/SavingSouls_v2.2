@@ -20,7 +20,7 @@ namespace SavingSouls_v2._2
             InitializeComponent();
         }
 
-        void o()
+        void LoadBD()
         {
             string connectionString = (conStr);
             string sql = "SELECT * FROM Происшествия";
@@ -39,7 +39,7 @@ namespace SavingSouls_v2._2
         private void Operator_Load(object sender, EventArgs e)
         {
             this.Location = new Point(300, 250);
-            o();
+            LoadBD();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,7 +50,14 @@ namespace SavingSouls_v2._2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            o();
+            LoadBD();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Enter newEnter = new Enter();
+            newEnter.Show();
         }
     }
 }
