@@ -44,7 +44,7 @@ namespace SavingSouls_v2._2
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 dataGridView1.DataSource = ds.Tables[0];
-
+                this.dataGridView1.Columns["id_Группы"].Visible = false;
 
             }
         }

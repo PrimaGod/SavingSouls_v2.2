@@ -43,6 +43,7 @@ namespace SavingSouls_v2._2
         {
             this.Location = new Point(300, 250);
             Loading("SELECT * FROM[Состав оперативных групп]");
+            this.dataGridView1.Columns["id"].Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
